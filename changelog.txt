@@ -1,0 +1,57 @@
+*** Changelog ***
+
+= 1.3.2 - 12-02-2024 =
+* Bug fix - Customer shipping address and shipping line item not created in order when checkout doesn't fully submit
+* Tested with PHP 8.2 & Wordpress 6.4
+
+= 1.3.1 - 12-10-2023 =
+* Added ship_to_different_address handling to ensure shipping address is filled from billing address when required
+
+= 1.3.0 - 21-04-2023 =
+* Implemented patch to resolve issue whereby order is not always captured.
+* WC Order now created at the point of payment initiation
+* Added billing_request webhook handler to add payment ID to orders where it doesn't already exists
+* Changed main js script name to avoid caching issues
+* Bug fix - another payment option pre-selected on checkout load caused GC flow not to be triggered
+
+= 1.2.4 - 01-03-2023 =
+* Fixed change log issue that prevented v1.2.3 being committed to svn fully
+
+= 1.2.3 - 28-02-2023 =
+* Increased GC drop-in script version number - resolving cached close button bug
+
+= 1.2.2 - 29-01-2023 =
+* Bug fix - Close button not clicked - order not captured. Change at GoCardless end - onSuccess event fired on payment success rather than modal close.
+* Customer notice (click close button) removed
+
+= 1.2.1 - 14-01-2023 =
+* Added link to premium version - supports recurring payments (WooCommerce subscriptions)
+* Added temporary notice to customer above GoCardless checkout flow - requesting customer to close the flow using close button.
+
+= 1.2.0 - 22-10-2022 =
+* Payment flow triggered on button click rather than checkout submit to improve stability
+* Place order button disabled during flow to prevent multiple payment flows being created
+* Only creates WC order if payment flow was completed successfully
+* Payment flow errors now handled client side
+* Added option: ajax client side error and info logging
+* Updated icon and banner
+
+= 1.1.2 - 26-07-2022 =
+* Fixed text typos
+* Fixed critical error if WooCommerce isn't active
+
+= 1.1.1 - 15-07-2022 =
+* Replaced CURL requests with WP HTTP API
+* Post input sanitization
+* Corrected readme.txt information
+* Removed some surplus code (re-use GC customer functionality)
+
+= 1.1.0 - 13-07-2022 =
+* Added server side required checkout field validation
+* Changed display name and slug
+
+= 1.0.1 - 11-07-2022 =
+* Added additional Woocommerce errors for incorrectly setup GC accounts
+
+= 1.0.0 - 08-05-2022 =
+* First Release
